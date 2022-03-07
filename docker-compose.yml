@@ -1,0 +1,30 @@
+version: '3.1'
+services:
+    web-app:
+        build:
+            context: ./app
+            dockerfile: Dockerfile
+        container_name: webapp-flask
+        volumes:
+            - ./app:/app/
+        networks:
+            my-network:
+                aliases:
+                    - flask-app
+    web-server:
+        build:
+            context: ./nginx
+            dockerfile: Dockerfile
+        environment:
+            domain: decision-radar.com
+        ports:
+            - 5001:80
+            - 5002:443
+        volumes:
+            - ./nginx:/nginx/
+        depends_on:
+            - web-app
+        networks:
+            - my-network
+networks:
+    my-network:

@@ -34,5 +34,11 @@ I used ports `5001` and `5002` in case `80` and `443` have been consumed already
 
  # Test 
 
+ for running test 
+
+ goto app folder 
+  and run 
+  pytests
+
 
 

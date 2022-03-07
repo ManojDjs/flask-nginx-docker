@@ -1,5 +1,4 @@
 import pytest
-from flask import Flask
 import json
 from app import app
 from app.large_number_addition import findSum

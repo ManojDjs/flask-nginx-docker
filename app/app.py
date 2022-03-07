@@ -12,7 +12,7 @@ def checkPostedData(postedData, functionName):
     
 @app.errorhandler(404)
 def not_found(error):
-    return make_response(jsonify({"error": "Not found!"}), 404)
+    return jsonify({"error": "Not found!"}),404
 
 @app.route('/')
 def hello_world():
